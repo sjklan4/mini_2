@@ -1,0 +1,45 @@
+.menu_img{
+    width: 30px;
+    height: 40px;
+}
+
+.title_img{
+    width: 350px;
+    height: 150px;
+}
+
+.my_menu{
+    padding-top: 50px;
+}
+
+.parent {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 30px;
+    }
+
+.parent2 {
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 0px;
+    }
+        
+    .div1 { grid-area: 1 / 1; }
+    .div2 { grid-area: 1 / 2; }
+
+.event_img{
+    margin-top: 10%;
+    margin-left: 30%;
+
+}
+
+.uk-navbar-dropdown-width-10:not(.uk-navbar-dropdown-stack) {
+    width: 100%;
+}
