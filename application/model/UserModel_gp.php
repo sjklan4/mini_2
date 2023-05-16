@@ -2,25 +2,12 @@
 
 namespace application\model;
 class UserModel extends Model{
-    public function getUser($arrUserInfo, $pwFlg = true){  //2번째 파라미터가 있으면 그대로 진행 없으면 기본셋팅으로 실행
-        $sql = " select * from user_info where u_id = :u_id ";
-
-        //PW 추가할 경우
-        if($pwFlg){
-            $sql .= " and u_pw =:u_pw ";
-        }
-
-
+    public function getUser($arrUserInfo){
+        $sql = " select * from user_info where u_id = :id and u_pw =:pw ";
         $prepare = [
-            ":u_id" => $arrUserInfo["u_id"]
+            ":id" => $arrUserInfo["id"]
+            ,":pw" => $arrUserInfo["pw"]
         ];
-
-        //PW 추가할 경우
-        if($pwFlg){
-            $prepare[":u_pw"] = $arrUserInfo["u_pw"];
-        }
-
-
         try {
             $stmt = $this->conn->prepare($sql);
             $stmt->execute($prepare);
@@ -32,12 +19,14 @@ class UserModel extends Model{
             echo "UserModel->getUser Error : ".$e->getMessage();
             exit();
         }   
-
+        finally
+        {
+            $this->closeConn();
+        }
         return $result;
     }
 
-    // Insert User (유저 DB에 추가)
-    public function insertUser($arrUserInfo){
+    public function accountUser($arrUserInfo){
         $sql = " INSERT INTO user_info( "	
             ." u_id "	
             ." ,u_pw "
@@ -61,34 +50,30 @@ class UserModel extends Model{
             ,":address" => $arrUserInfo["address"]
         ];
         try {
+            $this->conn->beginTransaction();
             $stmt = $this->conn->prepare($sql);
-            $result = $stmt->execute($prepare);
-            return $result;
+            $stmt->execute($prepare);
+            $result = $stmt->rowCount();
+            $this->conn->commit();
         } 
         catch (Exception $e) 
         {
-            return false;
+            echo "UserModel->getUser Error : ".$e->getMessage();
+            exit();
         }   
+        finally
+        {
+            $this->closeConn();
+        }
+        return $result;
     }
 
-    // public function getUserById($userId) {
-    //     $sql = "SELECT * FROM users WHERE u_id = :u_id";
-    //     $stmt = $this->conn->prepare($sql);
-    //     $stmt->bindParam(':u_id', $userId);
-    //     $stmt->execute();
-    //     return $stmt->fetch();
-    // }
-    
-    //멤버 정보 가져오기
-    public function mypage($arrUserInfo){
-        " select * from user_info where u_id = :u_id ";
-        $prepare = [
-            ":u_id" => $arrUserInfo["u_id"]
-        ];
-
+    public function getUserById($userId) {
+        $sql = "SELECT * FROM users WHERE u_id = :u_id";
         $stmt = $this->conn->prepare($sql);
-        $stmt->execute($prepare);
-        $result = $stmt->fetchAll();
+        $stmt->bindParam(':u_id', $userId);
+        $stmt->execute();
+        return $stmt->fetch();
     }
 
 }

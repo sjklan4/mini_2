@@ -1,0 +1,24 @@
+.naver_acc{
+    background-color: rgb(9, 211, 9);
+    border: solid  rgb(9, 211, 9);
+    width: 300px;
+    height: 50px;
+}
+
+.kakao_acc{
+    background-color: yellow;
+    border: solid yellow;
+    width: 300px;
+    height: 50px;
+}
+
+li{
+    list-style: none;
+    padding: 5px;
+    text-align: center;
+    width: 300px;
+}
+
+h1{
+    align-items: center;
+}

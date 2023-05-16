@@ -1,0 +1,6 @@
+Options -MultiViews  = MultiViews 옵션을 해체한다. 대체 파일의 확장자를 사용하여 파일을 찾도록함
+RewriteEngine On = 
+Options -Indexes
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
