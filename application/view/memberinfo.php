@@ -1,6 +1,4 @@
-<?php
-    $MemberInfo = getUser()
-?>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -10,6 +8,15 @@
     <title>Document</title>
 </head>
 <body>
+    
+    <?php echo $this->u_id ?>
+    <br>
+    <?php echo $this->u_pw ?>
+    <br>
+    <?php echo $this->member_name ?>
+    <br>
+    <?php echo $this->address ?>
+    <button type="button" class="btn btn-light"  onclick="location.href ='/user/changeinfo'">정보변경</button>
 
 
 </body>

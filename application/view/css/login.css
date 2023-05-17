@@ -1,17 +1,27 @@
-.parent {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr) repeat(2, 0.3fr) 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    }
-    
-    .div1 { grid-area: 0.5 / 1 / 2 / 3; }
-    .div2 { grid-area: 2 / 1 / 3 / 2; }
-    .div3 { grid-area: 2 / 2 / 3 / 3; }
-    .div4 { grid-area: 3 / 1 / 4 / 3; }
-    .div5 { grid-area: 4 / 1 / 5 / 3; }
-    .div6 { grid-area: 5 / 1 / 6 / 3; }
+.naver_acc{
+    background-color: rgb(9, 211, 9);
+    border: solid  rgb(9, 211, 9);
+    width: 300px;
+    height: 50px;
+}
+
+.kakao_acc{
+    background-color: yellow;
+    border: solid yellow;
+    width: 300px;
+    height: 50px;
+}
+
+li{
+    list-style: none;
+    padding: 5px;
+    text-align: center;
+    width: 300px;
+}
+
+h1{
+    align-items: center;
+}
 
 .login_btn{
     background-color: rgb(0, 80, 253);
@@ -25,6 +35,6 @@
 border: 2px solid black; 
 width: 400px; 
 height: 400px;
-
+margin-left: 100px ;
 }
 

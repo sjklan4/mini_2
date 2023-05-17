@@ -67,9 +67,15 @@ class Controller{
         return _PATH_VIEW.$view; //최종 리턴값은 = application / view / login.php를 리턴 시킨다.
     }
 
-    // 동적 속성(DynamicProperty)를 셋팅하는 메소드
+    // 동적 속성(DynamicProperty)를 셋팅하는 메소드(key 값과 $val값을 받아서 사용하겠다는 구문)
     public function addDynamicProperty($key, $val){
         $this->$key = $val; 
+    }
+
+    public function addDynamicPropertyArr($data){ //다수 데이터 불러오는 addDynami구문 - propertyarr를 배열로 받아와서 모든 데이터를 보여줄수 있는 기능
+        foreach($data as $key => $val) {
+            $this->$key = $val; 
+        }
     }
 
     // 유저 권한 체크 메소드

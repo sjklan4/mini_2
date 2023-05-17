@@ -26,15 +26,16 @@
           </div>
           <div class="col d-flex justify-content-center">
             <div class="my_menu">
-                <img src="/application/view//imgfile/booking.PNG" class="menu_img">
-                <img src="/application/view//imgfile/mymenu.PNG" class="menu_img">
+                <!-- <img src="/application/view//imgfile/booking.PNG" class="menu_img">
+                <img src="/application/view//imgfile/mymenu.PNG" class="menu_img"> -->
                 
                 <?php if(!isset($_SESSION[_STR_LOGIN_ID])){ ?>
                   <button type="button" class="btn btn-light"  onclick="location.href ='/user/login'">로그인</button>
                   <button type="button" class="btn btn-light"  onclick="location.href ='/user/regist'">회원가입</button>
                 <?php } else{?>
+                  <?php echo "안녕하세요".$_SESSION[_STR_LOGIN_ID]."님" ?>
                   <button type="button" class="btn btn-light"  onclick="location.href ='/user/logout'">로그아웃</button>
-                  <button type="button" class="btn btn-light"  onclick="location.href ='/user/memberinfo'">내정보</button>
+                  <button type="button" class="btn btn-light"  onclick="location.href ='/memberinfo/memberinfo'">내정보</button>
                   <?php }?>
             </div>
           </div>

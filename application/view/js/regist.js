@@ -10,18 +10,27 @@
 
   function chkDuplicationID(){
     const id = document.getElementById('u_id');
+    const idspan = document.getElementById('errMsgId');
 
     const url = "/api/user?u_id=" + id.value;
+    const special_pattern = new RegExp('[^a-zA-Z0-9]');
+    if(id.value === ""){
+      idspan.innerHTML = "아이디를 입력해주세요"
+      return false;
+    } else if(id.value.match(special_pattern)!==null){
+      idspan.innerHTML = "영문숫자만 사용 가능합니다."
+      return false;
+    }
+    
     let apiData = null;
     // API
     fetch(url)
     .then(data => {return data.json();})
     .then(apiData => {
-      const idspan = document.getElementById('errMsgId');
       if(apiData["flg"] === "1"){
         idspan.innerHTML = apiData["msg"]
       } else{
-        idspan.innerHTML = "";
+        idspan.innerHTML = apiData["msg"];
       }
     });
 
