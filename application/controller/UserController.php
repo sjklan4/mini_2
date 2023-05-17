@@ -167,16 +167,24 @@ class UserController extends Controller{ //controller가 없는 이유는 디폴
         }
 
         // Transaction start ??try문 없이 바로 사용이 가능? 어떤 로직 구조?
-        $this->model->beginTransaction();
-        // user insert
-        if(!$this->model->changeinfo($arrPost)){
-            //예외처리 롤백
-            $this->model->rollback();
-            echo "User Regist ERROR";
-            exit();
-        }
-        $this->model->commit(); //정상처리 커밋
+        // $this->model->beginTransaction();
+        // // user insert
+        // if(!$this->model->changeinfo($arrPost)){
+        //     //예외처리 롤백
+        //     $this->model->rollback();
+        //     echo "User Regist ERROR";
+        //     exit();
+        // }
+        // $this->model->commit(); //정상처리 커밋
         // ***********Teransaction End**********
+        $result = $this->model->changeinfo($arrPost);
+        if(!$result){
+            $errMsg = "정보변경 수정";
+            $this->addDynamicProperty("errMsg",$errMsg);
+            return "changeinfo"._EXTENSION_PHP;
+        }
+
+
 
         //로그인페이지로 이동
         return _BASE_REDIRECT."/user/login";
