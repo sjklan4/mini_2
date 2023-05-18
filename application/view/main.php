@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="/application/view/css/tour.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container position-relative">
         <div class="row">
           <div class="col d-flex justify-content-center">
-            <h1><img src="/application/view/imgfile/title.PNG" class="title_img"></h1>
+            <h1><img src="/application/view/imgfile/title2.PNG" class="title_img"></h1>
           </div>
           <div class="col-5 d-flex justify-content-center">
             <form action="https://search.naver.com/search.naver" method="GET">
@@ -147,7 +147,9 @@
       </div>
 
     <div class="parent">
-        <div class="card" style="width: 18rem;">
+ 
+
+        <div class="card" style="width: 19rem; float : none; margin:0 auto ;"  >
             <img src="/application/view//imgfile/pagein/danag.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
@@ -155,7 +157,7 @@
               <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
           </div>
-          <div class="card" style="width: 18rem;">
+          <div class="card" style="width: 19rem; float : none; margin:0 auto ;">
             <img src="/application/view//imgfile/pagein/kor1.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
@@ -163,7 +165,7 @@
               <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
           </div>
-          <div class="card" style="width: 18rem;">
+          <div class="card" style="width: 19rem; float : none; margin:0 auto ;">
             <img src="/application/view//imgfile/pagein/kor3.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
@@ -171,7 +173,7 @@
               <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
           </div>
-          <div class="card" style="width: 18rem;">
+          <div class="card" style="width: 19rem; float : none; margin:0 auto ;">
             <img src="/application/view//imgfile/pagein/kor5.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
@@ -179,7 +181,7 @@
               <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
           </div>
-          <div class="card" style="width: 18rem;">
+          <div class="card" style="width: 19rem; float : none; margin:0 auto ;">
             <img src="/application/view//imgfile/pagein/northeuro1.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
@@ -187,7 +189,7 @@
               <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
           </div>
-          <div class="card" style="width: 18rem;">
+          <div class="card" style="width: 19rem; float : none; margin:0 auto ;">
             <img src="/application/view//imgfile/pagein/northeuro2.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
@@ -195,7 +197,7 @@
               <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
           </div>
-          <div class="card" style="width: 18rem;">
+          <div class="card" style="width: 19rem; float : none; margin:0 auto ;">
             <img src="/application/view//imgfile/pagein/northeuro3.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
@@ -203,7 +205,7 @@
               <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
           </div>
-          <div class="card" style="width: 18rem;">
+          <div class="card" style="width: 19rem; float : none; margin:0 auto ;">
             <img src="/application/view//imgfile/pagein/northeuro3.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
@@ -211,25 +213,69 @@
               <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
           </div>
+     
+    </div>
+    <div class= "submain">
+      <div class = "conten_img">
+        <img src="/application/view/imgfile/japanosaka.jpg" class = "event_img">
+          <div class = "submain_word">
+            <strong class = "tit">
+                  환율 떨어 졌다!<br>
+                  떠나자!<br>
+                  바다 건너로!
+            </strong>
+            <br>
+            <span class = "label_txt">여기 버튼 넣자</span><br>
+            <span class = "label_txt">여기 버튼 넣자</span><br>
+            <span class = "label_txt">여기 버튼 넣자</span>
+          </div>
+      </div>
+
+      <div class = "submain_list">
+          <ul class = "submenu_list">
+            <li class = "submenu_li">
+              <div class = "submenu_img">
+                <img src="/application/view/imgfile/pagein/kor1.jpg" alt="">
+              </div>
+              <div class = "submenu_h1">
+                  <h1>여행제목</h1>
+                  <h2>여행지 내용부분</h2>
+              </div>
+          </li>
+            <li class = "submenu_li">
+            <div class = "submenu_img">
+                <img src="/application/view/imgfile/pagein/danag.jpg" alt="">
+              </div>
+              <div class = "submenu_h1">
+                  <h1>여행제목</h1>
+                  <h2>여행지 내용부분</h2>
+              </div>
+            </li>
+            <li class = "submenu_li">
+            <div class = "submenu_img">
+                <img src="/application/view/imgfile/pagein/kor3.jpg" alt="">
+              </div>
+              <div class = "submenu_h1">
+                  <h1>여행제목</h1>
+                  <h2>여행지 내용부분</h2>
+              </div>
+            </li>
+            <li class = "submenu_li">
+            <div class = "submenu_img">
+                <img src="/application/view/imgfile/pagein/kor1.jpg" alt="">
+              </div>
+              <div class = "submenu_h1">
+                  <h1>여행제목</h1>
+                  <h2>여행지 내용부분</h2>
+              </div>
+            </li>
+          </ul>
+      </div>
     </div>
 
 
 
-
-    <div class="parent2">
-        <div class="div1"> 
-            <img src="/application/view//imgfile/japanosaka.jpg" class = "event_img">
-
-        </div>
-        <div class="div2"> 
-
-
-        </div>
-        </div>
-
-
-
-
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>      
+<?php require_once(_PATH_FOOTER) ?>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>      
 </body>
 </html>

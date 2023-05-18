@@ -8,9 +8,9 @@ class UserController extends Controller{ //controller가 없는 이유는 디폴
 
     public function loginPost(){
         $result = $this->model->getUser($_POST); //DB에서 유저정보 습득
-        $this->model->close(); //DB파기
+        // $this->model->close(); //DB파기
         
-        $result[0]["u_pw"] === $_POST["u_pw"];
+        // $result[0]["u_pw"] === $_POST["u_pw"];
         //유저 유무 체크
         if(count($result) === 0){
             $errMsg = "입력하신 회원 정보가 없습니다.";
@@ -134,7 +134,7 @@ class UserController extends Controller{ //controller가 없는 이유는 디폴
     public function changeinfoGet(){
         $id = [ "u_id" => $_SESSION[_STR_LOGIN_ID]];
         $result = $this->model->getUser($id,false);
-        $this->addDynamicProperty("userInfo",$result[0]); 
+        $this->addDynamicProperty("userInfo",$result[0]); //"userInfo라는 키값은 result의 0번방에 value값이다.
         return "changeinfo"._EXTENSION_PHP;
     }
 
@@ -166,23 +166,22 @@ class UserController extends Controller{ //controller가 없는 이유는 디폴
                 return "changeinfo"._EXTENSION_PHP;
         }
 
-        // Transaction start ??try문 없이 바로 사용이 가능? 어떤 로직 구조?
-        // $this->model->beginTransaction();
-        // // user insert
-        // if(!$this->model->changeinfo($arrPost)){
-        //     //예외처리 롤백
-        //     $this->model->rollback();
-        //     echo "User Regist ERROR";
-        //     exit();
-        // }
-        // $this->model->commit(); //정상처리 커밋
-        // ***********Teransaction End**********
-        $result = $this->model->changeinfo($arrPost);
-        if(!$result){
-            $errMsg = "정보변경 수정";
-            $this->addDynamicProperty("errMsg",$errMsg);
-            return "changeinfo"._EXTENSION_PHP;
+        $this->model->beginTransaction();
+     
+        if(!$this->model->changeinfo($arrPost)){
+            $this->model->rollback();
+            echo "User Regist ERROR";
+            exit();
         }
+        $this->model->commit(); //정상처리 커밋
+        // ***********Teransaction End**********
+        // 두번째 방법
+        // $result = $this->model->changeinfo($arrPost);
+        // if(!$result){
+        //     $errMsg = "정보변경 수정";
+        //     $this->addDynamicProperty("errMsg",$errMsg);
+        //     return "changeinfo"._EXTENSION_PHP;
+        // }
 
 
 
@@ -190,6 +189,19 @@ class UserController extends Controller{ //controller가 없는 이유는 디폴
         return _BASE_REDIRECT."/user/login";
 
     //---------------------------------------------------------------------------------  
+    }
+
+    // -----------------------회원 탈퇴----------------------------
+    public function memberinfoPost(){
+        $id = [ "u_id" => $_SESSION[_STR_LOGIN_ID]];
+        $result = $this->model->deletemember($id,false);
+        // $this->addDynamicProperty("userInfo",$result[0]); 
+        $this->model->beginTransaction();
+        $this->model->commit();
+        session_unset();
+        session_destroy();
+
+        return "main"._EXTENSION_PHP;
     }
 
 }

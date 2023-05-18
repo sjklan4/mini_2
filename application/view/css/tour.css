@@ -43,3 +43,59 @@
 .uk-navbar-dropdown-width-10:not(.uk-navbar-dropdown-stack) {
     width: 100%;
 }
+
+.conten_img{
+    width: 434px;
+}
+.conten_img .event_img{
+    width: 434px;
+    height: 550px;
+}
+
+
+.submain_list{
+    position: absolute;
+    left: 420px;
+    top: 1765px;
+}
+
+.submenu_list{
+    list-style: none;
+}
+
+.submenu_li{
+    margin: 10px;
+    float: left;
+    box-shadow: 5px 5px 5px gray;
+    width: 280px;
+    height: 430px;
+    background-color: white;
+}
+.submain_word{
+    position: relative;
+    right : 347px;
+    bottom: 464px;
+    text-align: center;
+    width: 1200px;
+    
+    
+}
+
+.tit{
+    color: white;
+    text-align: left;
+    font-size: 20px;
+    text-shadow: 3px 3px 3px gray ;    
+}
+
+.label_txt{
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: white;
+    width: 262px;
+    height: 35px;
+    margin: 9px;
+    margin-left: 90px;
+    display: inline-block;
+    
+}

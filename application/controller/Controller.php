@@ -27,7 +27,7 @@ class Controller{
 
         // model 호출
 
-        $this->model = $this->getModel($identityName); ///??????????????????????? 작성시 getModel이라는 함수를 사용 할 것이라는 것을 미리 작성후 아래 함수를 작성해야 되는가?
+        $this->model = $this->getModel($identityName); // 작성시 getModel이라는 함수를 사용 할 것이라는 것을 미리 작성후 아래 함수를 작성해야 되는가?
 
         // 해당 controller의 메소드 호출
         // loginGet()을 호출 

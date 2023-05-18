@@ -6,12 +6,31 @@ class UrlUtil{
 
     
     public static function getUrl(){
-        return isset($_GET["url"]) ? $_GET["url"] : "" ; //$_GET안에는 URESR/LOGIN이 담겨 있다.
+        return isset($_GET["url"]) ? $_GET["url"] : "" ; //$_GET안에는 URESR/LOGIN이 담겨 있다. (삼항 연산자)
+
+        // if(isset($_GET["url"])) {
+        //     return $_GET["url"];
+        // } else {
+        //     return "";
+        // }
+
+        // $test; // 선언
+        // $test = "1"; // 변수에 갑을 대입했다, 초기화 
+
+        // $_GET = [
+        //     "url" => "user/login"
+        // ];
+
+        // $_GET = array(
+        //     "url" => "user/login"
+        // );
+
+        // echo $_GET["url"];
     }
     
     //URL을 "/"로 구분해서 배열을 만들고 리턴
     public static function getUrlArrPath(){
-        $url = UrlUtil::getUrl();                       //static으로 선언시 ::으로 사용 가능 static으로 선언시 함수가 메모리로 전달되어 있다.
+        $url = UrlUtil::getUrl();                       //static으로 선언시 미리 메모리에 할당을 한다. 
         return $url !== "" ? explode("/", $url) : "";  // ueser/login으로 값을 받은것을 /기준으로 짤라서 배열로 다시 만들어서 리턴시킨다. 
     }
     // "/"를 "\"로 치환해주는 메소드

@@ -3,7 +3,7 @@
 namespace application\model;
 class UserModel extends Model{
     public function getUser($arrUserInfo, $pwFlg = true){  //2번째 파라미터가 있으면 그대로 진행 없으면 기본셋팅으로 실행
-        $sql = " select * from user_info where u_id = :u_id ";
+        $sql = " select * from user_info where u_id = :u_id and del_flg = 0 ";
 
         //PW 추가할 경우 - 의 처리 진행 if문 뒤에 부분
         if($pwFlg){
@@ -101,6 +101,30 @@ class UserModel extends Model{
             return false;
         }   
     }
+
+    public function deletemember($arrUserInfo){
+        $sql = " UPDATE user_info "
+                ." SET " 
+                ." del_flg = 1 "
+                ." WHERE " 
+                ." u_id =:u_id "
+                ;
+        
+        $prepare = [
+            ":u_id" => $arrUserInfo["u_id"]
+        ];
+        try {
+            $stmt = $this->conn->prepare($sql);
+            $result = $stmt->execute($prepare);
+            return $result;
+        } 
+        catch (Exception $e) 
+        {
+            return false;
+        }   
+    }
+
+
 
 
 

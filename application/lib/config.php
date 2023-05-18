@@ -18,7 +18,7 @@ define("_PATH_MODEL", "application/model/");
 define("_PATH_VIEW", "application/view/");
 
 define("_PATH_HEADER", _PATH_VIEW."header"._EXTENSION_PHP);
-
+define("_PATH_FOOTER", _PATH_VIEW."footer"._EXTENSION_PHP);
 
 define("_BASE_FILENAME_CONTROLLER","Controller");
 define("_BASE_FILENAME_MODEL","Model");
