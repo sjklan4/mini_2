@@ -47,7 +47,8 @@
                 <input type="text" name ="u_id" id ="id" placeholder = "아이디 입력">
                 <br>
                 <label for="pw"></label>
-                <input type="password" name = "u_pw" id = "pw" placeholder = "비밀번호 입력"><br>
+                <input type="password" name = "u_pw" id = "pw" placeholder = "비밀번호 입력">
+                <br>
                 <button type ="submit" class = "login_btn">로그인</button>
                 <h3 style = "color: red;"><?php echo isset($this->errMsg) ? $this->errMsg : ""; ?></h3>
                 <a href="/application/view/findpage.php">아이디 찾기</a>
@@ -57,7 +58,8 @@
         </div>
 
         <div class="col-6 col-md-6">
-            <div class ="naver_acc">네이버 아이디로 로그인</div><br>
+            <div class ="naver_acc">네이버 아이디로 로그인</div>
+            <br>
             <div class = "kakao_acc">카카오 계정으로 로그인</div>
         </div>
     </div>

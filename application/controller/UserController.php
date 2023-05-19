@@ -203,7 +203,6 @@ class UserController extends Controller{ //controller가 없는 이유는 디폴
 
         return "main"._EXTENSION_PHP;
     }
-
 }
 
 ?>

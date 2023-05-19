@@ -31,7 +31,7 @@ class UrlUtil{
     //URL을 "/"로 구분해서 배열을 만들고 리턴
     public static function getUrlArrPath(){
         $url = UrlUtil::getUrl();                       //static으로 선언시 미리 메모리에 할당을 한다. 
-        return $url !== "" ? explode("/", $url) : "";  // ueser/login으로 값을 받은것을 /기준으로 짤라서 배열로 다시 만들어서 리턴시킨다. 
+        return $url !== "" ? explode("/", $url) : "";  // ueser/login으로 값을 받은것을 /기준으로 짤라서 배열로 다시 만들어서 리턴시킨다. -$url = [user, login]형태
     }
     // "/"를 "\"로 치환해주는 메소드
     public static function replaceSlashToBackslash($str){

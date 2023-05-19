@@ -220,13 +220,17 @@
         <img src="/application/view/imgfile/japanosaka.jpg" class = "event_img">
           <div class = "submain_word">
             <strong class = "tit">
-                  환율 떨어 졌다!<br>
-                  떠나자!<br>
+                  환율 떨어 졌다!
+                  <br>
+                  떠나자!
+                  <br>
                   바다 건너로!
             </strong>
             <br>
-            <span class = "label_txt">여기 버튼 넣자</span><br>
-            <span class = "label_txt">여기 버튼 넣자</span><br>
+            <span class = "label_txt">여기 버튼 넣자</span>
+            <br>
+            <span class = "label_txt">여기 버튼 넣자</span>
+            <br>
             <span class = "label_txt">여기 버튼 넣자</span>
           </div>
       </div>

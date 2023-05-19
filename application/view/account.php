@@ -63,7 +63,8 @@
         </div>
 
         <div class="col-6 col-md-6">
-            <div class ="naver_acc">네이버 아이디로 회원가입</div><br>
+            <div class ="naver_acc">네이버 아이디로 회원가입</div>
+            <br>
             <div class = "kakao_acc">카카오 계정으로 회원가입</div>
         </div>
     </div>

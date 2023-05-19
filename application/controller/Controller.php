@@ -26,11 +26,11 @@ class Controller{
         $this->chkAuthorization();
 
         // model 호출
-
+        // application에서 수행해서 준 이름의 모델 을 실행 시키기 위한 구문
         $this->model = $this->getModel($identityName); // 작성시 getModel이라는 함수를 사용 할 것이라는 것을 미리 작성후 아래 함수를 작성해야 되는가?
 
         // 해당 controller의 메소드 호출
-        // loginGet()을 호출 
+        // loginGet()을 호출 - application에 controllerName에 있는 아규먼트인 login이 $action에 담겨서 그이름의 VIEW를 셋팅
         $view = $this->$action(); // UserController.php에 있는 login
 
         if(empty($view)){
@@ -41,7 +41,7 @@ class Controller{
         //view 호출
         require_once $this->getView($view); //__construct의 $action을 참조해서 불러오는 구문
     }
-
+//-----------------------------------------------------------------------------------------------------------여기까지함230519 10:25----
     // model 호출하고 결과를 리턴
 
     protected function getModel($identityName){
